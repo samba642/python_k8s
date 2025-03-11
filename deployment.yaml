@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: my-pythonapp
-        image: samba642/python_k8s_img:01
+        image: samba642/python_k8s_img:02
         ports:
         - containerPort: 8189
         envFrom:
