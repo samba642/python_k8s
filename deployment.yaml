@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-pythonapp
+  namespace: python-ns
+  labels:
+    app: my-pythonapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-pythonapp
+  template:
+    metadata:
+      labels:
+        app: my-pythonapp
+    spec:
+      containers:
+      - name: my-pythonapp
+        image: samba642/python_k8s_img:01
+        ports:
+        - containerPort: 8189
+        envFrom:
+        - configMapRef:
+            name: my-pythonapp-config
+        - secretRef:
+            name: my-pythonapp-secret

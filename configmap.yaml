@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-pythonapp-config
+  namespace: python-ns
+data:
+  Mongoip: "mongo.default.svc.cluster.local"
+  Mongoport: "27017"
+  Dev: "true"
+  Debug: "false"
+  Service_name: "my-pythonapp-service"
+  MongoDB: "mydatabase"
